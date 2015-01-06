@@ -1,0 +1,40 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+update_interval 1.0
+total_run_times 0
+short_units on
+if_up_strictness address
+use_spacer left
+override_utf8_locale yes
+cpu_avg_samples 1
+
+TEXT
+[{"full_text" : " \
+${if_match ${fs_free_perc}>90}○${else}\
+${if_match ${fs_free_perc}>75}◔${else}\
+${if_match ${fs_free_perc}>50}◑${else}\
+${if_match ${fs_free_perc}>25}◕${else}\
+${if_match ${fs_free_perc}>0}●${else}\
+◌${endif}${endif}${endif}${endif}${endif}$fs_free/$fs_size Free",\
+"color": ${if_match ${fs_free_perc}>50}"\#37D637"${else} \
+"\#ffffff"${endif}},
+{ "full_text" : " RAM: $memperc% ",  "color" : "\#ffffff" },
+{ "full_text" : " CPU: $cpu% ",  "color" : "\#ffffff" },
+{ "full_text" : " $battery_short ",  "color" : \
+${if_match ${battery_percent}<5}"\#ff0000"${else}\
+${if_match ${battery_percent}<10}"\#ff1111"${else}\
+${if_match "$battery_short"=="F"}"\#00ff00"${else}\
+"\#D64937"${endif}${endif}${endif}},
+{ "full_text" : ${if_match ${wireless_link_qual wlan0}==0}" ◌ ◌ ◌ ◌ "${else}\
+" ${wireless_essid wlan0} ", "color": "\#ffffff"},\
+{ "full_text" : " \
+${if_match ${wireless_link_qual wlan0}<25}● ○ ○ ○${else}\
+${if_match ${wireless_link_qual wlan0}<50}● ● ○ ○${else}\
+${if_match ${wireless_link_qual wlan0}<75}● ● ● ○${else}\
+● ● ● ●${endif}${endif}${endif} "${endif}\
+, "color" : "\#ffffff" },
+{ "full_text" : " Vol: ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ", "color" : "\#ffffff"},
+{ "full_text" : " $time " , "color" : "\#ffffff" }],
