@@ -1,0 +1,37 @@
+[global_config]
+  title_receive_bg_color = "#375f7b"
+  geometry_hinting = False
+  title_transmit_bg_color = "#d30102"
+  inactive_color_offset = 0.59
+  borderless = True
+[keybindings]
+[profiles]
+ [[default]]
+    palette = INSERT_PALETTE_HERE
+    background_image = None
+    background_darkness = 0.89
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    font = Monospace 9
+ [[normal]]
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    background_image = None
+    background_darkness = 0.89
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    font = Monospace 9
+[layouts]
+  [[default]]
+something
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
