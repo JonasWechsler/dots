@@ -23,11 +23,6 @@ ${if_match ${fs_free_perc}>0}●${else}\
 "\#ffffff"${endif}},
 { "full_text" : " RAM: $memperc% ",  "color" : "\#ffffff" },
 { "full_text" : " CPU: $cpu% ",  "color" : "\#ffffff" },
-{ "full_text" : " $battery_short ",  "color" : \
-${if_match ${battery_percent}<5}"\#ff0000"${else}\
-${if_match ${battery_percent}<10}"\#ff1111"${else}\
-${if_match "$battery_short"=="F"}"\#00ff00"${else}\
-"\#D64937"${endif}${endif}${endif}},
 { "full_text" : ${if_match ${wireless_link_qual wlan0}==0}" ◌ ◌ ◌ ◌ "${else}\
 " ${wireless_essid wlan0} ", "color": "\#ffffff"},\
 { "full_text" : " \

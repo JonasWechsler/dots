@@ -1,9 +1,0 @@
-#!/bin/sh
-echo "{\"version\":1}"
-echo "["
-echo "[],"
-
-conky -c ~/.i3/conkyrc & while read REPLY; do
-	touch somefile
-	echo "$REPLY" >> somefile
-done
