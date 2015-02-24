@@ -37,3 +37,5 @@ URxvt*cursorColor2:       #151515
 URxvt.scrollBar: false
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
 
+URxvt.fading: 45
+

@@ -15,13 +15,16 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-#exec i3
-#sxhkd &
 #terminator &
 #exec bspwm
+
 set +fp /usr/share/fonts/TTF
 xset fp rehash
 fc-cache -fv
 xrdb -load ~/.Xresources
-urxvt &
-exec bspwm
+systemctl start NetworkManager
+systemctl enable NetworkManager
+exec i3
+#urxvt &
+#sxhkd &
+#exec bspwm
