@@ -12,3 +12,9 @@ cp -ir terminator/* ~/.config/terminator/
 cp -i vimrc ~/.vimrc
 cp -ir xinitrc ~/.xinitrc
 cp -ir Xresources ~/.Xresources
+
+git clone https://github.com/Airblader/i3.git i3-patched
+cd i3-patched
+make clean
+make
+sudo make install
