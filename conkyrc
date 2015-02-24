@@ -1,35 +1,45 @@
-out_to_x no
-own_window no
-out_to_console yes
-background no
-max_text_width 0
-update_interval 1.0
+#----------------------------8<-----------------------------------------------------
+#
+#Just uncomment the line you want to use. 
+#
+#----------------------------8<-----------------------------------------------------
+background yes
+imlib_cache_size 0
+use_xft yes
+xftfont Droid Sans :size=25
+xftalpha 0.9
+update_interval .5
 total_run_times 0
-short_units on
-if_up_strictness address
-use_spacer left
+mpd_port 6600
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+border_margin 5
+default_color 555
+color1 fff
+color2 999
+alignment bottom_middle
+gap_x 0
+gap_y -20
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
 override_utf8_locale yes
-cpu_avg_samples 1
-
+default_bar_size 50,25
+#desktop_number
 TEXT
-[{"full_text" : " \
-${if_match ${fs_free_perc}>90}○${else}\
-${if_match ${fs_free_perc}>75}◔${else}\
-${if_match ${fs_free_perc}>50}◑${else}\
-${if_match ${fs_free_perc}>25}◕${else}\
-${if_match ${fs_free_perc}>0}●${else}\
-◌${endif}${endif}${endif}${endif}${endif}$fs_free/$fs_size Free",\
-"color": ${if_match ${fs_free_perc}>50}"\#37D637"${else} \
-"\#ffffff"${endif}},
-{ "full_text" : " RAM: $memperc% ",  "color" : "\#ffffff" },
-{ "full_text" : " CPU: $cpu% ",  "color" : "\#ffffff" },
-{ "full_text" : ${if_match ${wireless_link_qual wlan0}==0}" ◌ ◌ ◌ ◌ "${else}\
-" ${wireless_essid wlan0} ", "color": "\#ffffff"},\
-{ "full_text" : " \
-${if_match ${wireless_link_qual wlan0}<25}● ○ ○ ○${else}\
-${if_match ${wireless_link_qual wlan0}<50}● ● ○ ○${else}\
-${if_match ${wireless_link_qual wlan0}<75}● ● ● ○${else}\
-● ● ● ●${endif}${endif}${endif} "${endif}\
-, "color" : "\#ffffff" },
-{ "full_text" : " Vol: ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ", "color" : "\#ffffff"},
-{ "full_text" : " $time " , "color" : "\#ffffff" }],
+${if_match ${desktop}==1}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==2}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==3}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==4}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==5}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==6}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==7}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==8}${color1}${endif}${execbar echo 100}${color}${offset 10}\
+${if_match ${desktop}==9}${color1}${endif}${execbar echo 100}${color}
