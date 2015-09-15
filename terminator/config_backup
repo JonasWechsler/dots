@@ -1,1 +1,0 @@
-sed  '/\[profiles\]\n\ \ \[\[default\]\]/!b;n;c \ \ \ \ palette = #202020:#a09992:#a09b97:#a09c96:#a09d97:#a09b96:#33a099:#a09c96:#807c70:#05bdc8:#03b4c8:#05b2d0:#06bce0:#7cc8c2:#30c3e0:#5ac8e0 ' /home/jonas/.config/terminator/config

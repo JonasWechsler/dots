@@ -1,21 +1,22 @@
-#sudo apt-get install -y beep xscreensaver conky feh terminator
-#sudo apt-get install i3
-#
-#sudo modprobe pcspkr
-#
-#wget http://github.com/downloads/djmelik/archey/archey-0.2.8.deb
-#sudo dpkg -i archey-0.2.8.deb
+#apt-get install ruby-ronn
+#git clone git://github.com/vivien/i3blocks
+#cd i3blocks
+#make clean
+#make install
 
-#cp -ir i3/* ~/.i3/
-#cp -i Pictures/* ~/Pictures/
-#cp -ir terminator/* ~/.config/terminator/
-#cp -i vimrc ~/.vimrc
-#cp -ir xinitrc ~/.xinitrc
-#cp -ir Xresources ~/.Xresources
-#cp -ir conkyrc ~/.conkyrc
+#git clone https://github.com/Airblader/i3.git
+#For gaps
 
-git clone https://github.com/Airblader/i3.git i3-patched
-cd i3-patched
-make clean
-make
-sudo make install
+pip install --user py3status
+#Installs at $HOME/.local/bin/py3status
+
+mkdir $HOME/.local/share/fonts
+cp fontawesome-webfont.ttf $HOME/.fonts
+cp fontawesome-webfont.ttf $HOME/.local/share/fonts
+fc-cache -f -v
+
+cp -r i3/* $HOME/.i3/
+cp Pictures/* $HOME/Picutres/
+cp vimrc $HOME/.vimrc
+cp xinitrc $HOME/.xinitrc
+cp Xresources $HOME/.Xresources
