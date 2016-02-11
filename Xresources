@@ -16,7 +16,7 @@ URxvt.scrollWithBuffer:  true
 URxvt.scrollTtyKeypress: true
 
 URxvt.inheritPixmap: false
-URxvt.fading: 0
+URxvt.fading: 45
 
 URxvt.perl-lib: ${HOME}/.urxvt/ext/perls
 URxvt.perl-ext-common: clipboard,default,matcher,-option-popup,-searchable-scrollback,-selection-popup

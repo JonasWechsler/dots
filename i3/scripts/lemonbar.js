@@ -10,10 +10,16 @@ const light_colors = [];
 const dark_colors = [];
 const BLACK = "#212121";
 const WHITE = "#FFFFFF";
+const LIGHT_SATURATION = .4615;
+const LIGHT_VALUE = .975;
+const SATURATION = .6653;
+const VALUE = .9373;
+const DARK_SATURATION = .847;
+const DARK_VALUE = .7176;
 
 var cpu_usage = "??";
 var ram_usage = "??";
-
+var bat_usage = "??";
 
 function findUsages(){
     exec('top -bn2 | grep \"Cpu(s)\" | awk \'{print $2 + $4}\' | sed -n 2p', function(err, stdout, stderr){
@@ -25,6 +31,9 @@ function findUsages(){
             echo \"$CURRENT\"", function(err, stdout, stderr){
                 ram_usage = trim(stdout);
             });
+    exec("acpi | grep -o \"[0-9][0-9]%\"",function(err, stdout, stderr){
+        bat_usage = trim(stdout);
+    });
 }
 
 function trim(x) {
@@ -78,14 +87,17 @@ function formatWorkspace(data){
     }
 }
 
+function getDarkColor(num){
+    if(dark_colors[num]){
+        return dark_colors[num];
+    }
+    var h = num/7;
+    var dark = hsv.hsv(h, DARK_SATURATION, DARK_VALUE);
+    dark_colors[num] = dark;
+}
+
 function generateColors(){
     var hues = ["red","orange","yellow","green","blue","indigo","violet"];
-    const LIGHT_SATURATION = .4615;
-    const LIGHT_VALUE = .975;
-    const SATURATION = .6653;
-    const VALUE = .9373;
-    const DARK_SATURATION = .847;
-    const DARK_VALUE = .7176;
     for(var i=0;i<hues.length;i++){
         var h = i/hues.length;
         var name = hues[i];
@@ -118,17 +130,17 @@ function left(wspaces){
 
 function middle(name){
     with(lemon){
-        return [c(fg(bg(padding() + name + padding(), BLACK), WHITE)),
-               c(fg(bg(padding() + padding(), BLACK), WHITE))];
+        return [c(fg(bg(padding() + name + padding(), BLACK), WHITE))];
     }
 }
 
 function right(){
     with(lemon){
-        return [r(fg(bg(padding() + "2" + padding(), dark_colors[4]),WHITE)), 
-               r(fg(bg(padding() + cpu_usage + padding(), dark_colors[5]) + 
-                           bg(padding() + ram_usage + " kB" + padding(), dark_colors[6]) + 
-                           bg(padding() + time()  + padding(), dark_colors[4]),WHITE))];
+        return [r(fg(
+                bg(padding() + bat_usage + padding(), getDarkColor(5.5)) + 
+                bg(padding() + cpu_usage + padding(), dark_colors[5]) + 
+                bg(padding() + ram_usage + " kB" + padding(), dark_colors[6]) + 
+                bg(padding() + time()  + padding(), dark_colors[4]),WHITE))];
     }
 }
 
