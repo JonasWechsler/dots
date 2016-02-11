@@ -1,4 +1,35 @@
-! vim: set filetype=xdefaults :
+URxvt.urgentOnBell: off
+URxvt.visualBell: off
+URxvt.iso14755: off
+URxvt.iso14755_52: off
+URxvt.meta8: true
+URxvt.depth: 32
+URxvt.iconFile: /usr/share/icons/Humanity/apps/128/utilities-terminal.svg
+
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+URxvt.scrollBar: off
+URxvt.saveLines: 1024
+URxvt.scrollTtyOutput:   false
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
+
+URxvt.inheritPixmap: false
+URxvt.fading: 0
+
+URxvt.perl-lib: ${HOME}/.urxvt/ext/perls
+URxvt.perl-ext-common: clipboard,default,matcher,-option-popup,-searchable-scrollback,-selection-popup
+
+URxvt.url-select.button:   1
+URxvt.url-select.launcher: x-www-browser
+
+URxvt.clipboard.copycmd:  xsel --input  --clipboard
+URxvt.clipboard.pastecmd: xsel --output --clipboard
+
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+
 *foreground: #D7D0C7
 *background: #151515
 
@@ -34,8 +65,5 @@ URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #dddddd
 URxvt*cursorColor2:       #151515
 
-URxvt.scrollBar: false
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
-
-URxvt.fading: 45
 

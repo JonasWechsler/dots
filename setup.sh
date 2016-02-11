@@ -15,8 +15,9 @@ cp fontawesome-webfont.ttf $HOME/.fonts
 cp fontawesome-webfont.ttf $HOME/.local/share/fonts
 fc-cache -f -v
 
-cp -r i3/* $HOME/.i3/
-cp Pictures/* $HOME/Pictures/
-cp vimrc $HOME/.vimrc
-cp xinitrc $HOME/.xinitrc
-cp Xresources $HOME/.Xresources
+rm -rv ~/.i3/*
+cp -rv i3/* $HOME/.i3/
+cp -v Pictures/* $HOME/Pictures/
+cp -v vimrc $HOME/.vimrc
+cp -v xinitrc $HOME/.xinitrc
+cp -v Xresources $HOME/.Xresources
