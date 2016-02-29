@@ -185,3 +185,6 @@ for_window [class="bar"] floating enable
 hide_edge_borders both
 
 exec "bash $HOME/.i3/scripts/autostart.sh > $HOME/log"
+
+bar{
+}

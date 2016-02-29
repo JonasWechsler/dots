@@ -1,3 +1,2 @@
 #!/bin/bash
-eval $(xdotool getmouselocation --shell)
-$HOME/.i3/bin/dmenu_run -p \> -l 20 -x $X -y $Y -w 220
+$HOME/.i3/bin/dmenu_run -p \> -l 20 -x 0 -y 0 -w 220

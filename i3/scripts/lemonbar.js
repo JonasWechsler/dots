@@ -62,8 +62,8 @@ function updateWorkspaces(callback){
             }
             out += formatWorkspace(json[i]);
         }
-        out = lemon.click(out, 4,"i3-msg -t command workspace prev");
-        out = lemon.click(out, 5,"i3-msg -t command workspace next");
+        //out = lemon.click(out, 4,"i3-msg -t command workspace prev");
+        //out = lemon.click(out, 5,"i3-msg -t command workspace next");
         workspacesStrings.push(out);
         callback(workspacesStrings);
     });
