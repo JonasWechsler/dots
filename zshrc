@@ -41,4 +41,3 @@ PROMPT_MACHINE="%F{cyan}%B%m%b%f"
 PROMPT_PATH="%F{green}%3~%f"
 PROMPT="$PROMPT_EXIT_CODE$PROMPT_USERNAME@$PROMPT_MACHINE $PROMPT_PATH> "
 RPROMPT=""
-source /home/jonas/Documents/dots/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
