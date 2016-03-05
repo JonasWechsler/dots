@@ -129,7 +129,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 ##############
 #            #
 #  Resizing  #
@@ -167,8 +166,10 @@ mode "resize" {
 
 #font pango:Fira Mono Medium 10
 #font pango: Ubuntu Mono 10
-font pango: FontAwesome Mono 10
+#font pango: FontAwesome Mono 10
+
 ###############################################################################
+#
 #                                                                             #
 #                                                                             #
 #                                                                             #
@@ -177,14 +178,27 @@ font pango: FontAwesome Mono 10
 bindsym $mod+n exec "i3lock -c 010101"
 bindsym $mod+Shift+s exec scrot
 
-
 #Remove title bar
 bindsym $mod+b [class="^.*"] border toggle
 for_window [class="^.*"] border pixel 0
 for_window [class="bar"] floating enable
-hide_edge_borders both
 
 exec "bash $HOME/.i3/scripts/autostart.sh > $HOME/log"
 
+
+
 bar{
+    position bottom
+    tray_output none
+    colors {
+        background #191919
+        statusline #191919
+        separator #191919
+
+        focused_workspace  #191919 #191919 #f9f9f9
+        active_workspace   #191919 #191919 #b9b9b9
+        inactive_workspace #191919 #191919 #b9b9b9
+        urgent_workspace   #191919 #191919 #ffd9d9
+        binding_mode       #191919 #191919 #b9b9b9
+    }
 }
