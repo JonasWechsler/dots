@@ -30,40 +30,41 @@ URxvt.clipboard.pastecmd: xsel --output --clipboard
 URxvt.keysym.Control-Shift-C: perl:clipboard:copy
 URxvt.keysym.Control-Shift-V: perl:clipboard:paste
 
-*foreground: #D7D0C7
-*background: #151515
+*foreground: #ffffff
+*background: #191919
 
 !black
 ! *color0:     #AF875F
 ! *color8:     #AF875F
-*color0:     #101010
-*color8:     #404040
+*color0:     #191919
+*color8:     #494949
 !red
-*color1:     #E84F4F
-*color9:     #D23D3D
+*color1:     #9adeea
+*color9:     #9adeea
 !green
-*color2:     #B8D68C
-*color10:    #A0CF5D
+*color2:     #7489a5
+*color10:    #7489a5
 !yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
+*color3:     #675989
+*color11:    #675989
 !blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
+*color4:     #77238e
+*color12:    #77238e
 !magenta
-*color5:     #9B64FB
-*color13:    #8542FF
+*color5:     #9e4770
+*color13:    #9e4770
 !cyan
-*color6:     #6D878D
-*color14:    #42717B
+*color6:     #d686ca
+*color14:    #d686ca
 !white
-*color7:     #dddddd
-*color15:    #dddddd
+*color7:     #f9f9f9
+*color15:    #f9f9f9
 
-URxvt*borderColor:        #151515
+URxvt.borderColor:        #191919
+URxvt.internalBorder:     20
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #dddddd
 URxvt*cursorColor2:       #151515
-
+URxvt*letterSpace:        0
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
 
