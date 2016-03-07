@@ -28,20 +28,19 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set wildmenu
-set cursorline
+filetype off
+syntax on
 set mouse=a
 set showcmd
 set t_Co=256 
 
-syntax on
 set background=dark
 set laststatus=2
-let g:gruvbox_contrast_dark='hard'
-colo gruvbox
+colo darkblue
 
 " set listchars=tab:\|\·
 " set listchars=tab:\⇥\ ,
-set listchars=tab:\⋮\ ,trail:·,extends:·,precedes:·
+ set listchars=tab:\⋮\ ,trail:·,extends:·,precedes:·
 
 
 set nu " Line numbers
