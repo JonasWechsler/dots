@@ -190,9 +190,10 @@ exec "bash $HOME/.i3/scripts/autostart.sh > $HOME/log"
 bar{
     position bottom
     tray_output none
+    status_command exec ~/.i3/scripts/status.sh
     colors {
         background #191919
-        statusline #191919
+        statusline #f9f9f9
         separator #191919
 
         focused_workspace  #191919 #191919 #f9f9f9
